@@ -25,6 +25,29 @@
         "clover honey"
       ],
       "image" : "peach-mango.svg"
+    },
+    {
+      "name" : "Strawberry Sprinkle",
+      "calories" : 220,
+      "type" : "sorbet",
+      "ingredients" : [
+        "Strawberries",
+        "Colored Sprinkles",
+        "Natural Sweetener"
+      ],
+      "image" : "strawberry-sprinkle.svg"
+    },
+    {
+      "name" : "Banana And Cream",
+      "calories" : 480,
+      "type" : "ice cream",
+      "ingredients" : [
+        "Bananas",
+        "Cream",
+        "Hazelnuts"
+      ],
+      "image" : "ice-cream-xtra2.svg"
     }
+
   ]
 }
