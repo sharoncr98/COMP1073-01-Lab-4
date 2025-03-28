@@ -64,6 +64,14 @@ function showTopFlavors(jsonObj) {
                 listItem.textContent = ingredients[j];
                 ul.appendChild(listItem);
         }
+        //Depending on the type of dessert change the style of the flavor name
+        let flavorType = topFlavors[i]["type"];
+        if(flavorType == "ice cream"){
+            h2.style.fontWeight = "bold";
+        }else if (flavorType == "sorbet"){
+            h2.style.fontStyle = "italic";
+        }
+        }
         // STEP 10h: Append each of the above HTML elements to the ARTICLE element
         article.appendChild(h2);
         article.appendChild(image);
