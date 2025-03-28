@@ -69,19 +69,20 @@ function showTopFlavors(jsonObj) {
         let flavorType = topFlavors[i]["type"];
         if(flavorType == "ice cream"){
             h2.style.fontWeight = "bold";
-            h2.style.color = "blue";
+            h2.style.color = "grey";
         }else if (flavorType == "sorbet"){
             h2.style.fontStyle = "italic";
         }
 
         //Add styling based on the calorie count
         if (calories >= 400){
-            h2.style.backgroundColor = "red";
+            h2.style.backgroundColor = "pink";
             h2.style.textDecoration = "underline";
         }else if (calories < 300){
             h2.style.backgroundColor = "lightgreen";
             let healthyText = document.createElement("span");
-            healthyText.textContent = "Healthy Pick";
+            healthyText.textContent = " *Healthy Pick* ";
+            healthyText.style.fontSize = "20px"
             h2.appendChild(healthyText);
 
 
