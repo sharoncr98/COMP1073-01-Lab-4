@@ -51,6 +51,7 @@ function showTopFlavors(jsonObj) {
         let ul = document.createElement('ul');
 
         let flavorName = topFlavors[i]["name"];
+        let calories = topFlavors[i]["calories"];
 
         // STEP 10f: Set the textContent property for each of the above elements (except the UL), based on the JSON content
         h2.textContent = flavorName;
@@ -71,6 +72,19 @@ function showTopFlavors(jsonObj) {
             h2.style.color = "blue";
         }else if (flavorType == "sorbet"){
             h2.style.fontStyle = "italic";
+        }
+
+        //Add styling based on the calorie count
+        if (calories >= 400){
+            h2.style.backgroundColor = "red";
+            h2.style.textDecoration = "underline";
+        }else if (calories < 300){
+            h2.style.backgroundColor = "lightgreen";
+            let healthyText = document.createElement("span");
+            healthyText.textContent = "Healthy Pick";
+            h2.appendChild(healthyText)
+
+
         }
         // STEP 10h: Append each of the above HTML elements to the ARTICLE element
         article.appendChild(h2);
