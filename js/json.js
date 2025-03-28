@@ -50,8 +50,10 @@ function showTopFlavors(jsonObj) {
         let image = document.createElement('img');
         let ul = document.createElement('ul');
 
+        let flavorName = topFlavots[i]["name"];
+
         // STEP 10f: Set the textContent property for each of the above elements (except the UL), based on the JSON content
-        h2.textContent = topFlavors[i]["name"];
+        h2.textContent = flavorName;
         image.setAttribute('src','https://raw.githubusercontent.com/shiv-coder/COMP1073W/main/lesson-10/lesson-10/images/' + topFlavors[i].image)
 
         // STEP 10g: Build a loop for the ingredients array in the JSON
