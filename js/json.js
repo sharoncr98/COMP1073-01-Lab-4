@@ -50,7 +50,7 @@ function showTopFlavors(jsonObj) {
         let image = document.createElement('img');
         let ul = document.createElement('ul');
 
-        let flavorName = topFlavots[i]["name"];
+        let flavorName = topFlavors[i]["name"];
 
         // STEP 10f: Set the textContent property for each of the above elements (except the UL), based on the JSON content
         h2.textContent = flavorName;
@@ -68,9 +68,9 @@ function showTopFlavors(jsonObj) {
         let flavorType = topFlavors[i]["type"];
         if(flavorType == "ice cream"){
             h2.style.fontWeight = "bold";
+            h2.style.color = "blue";
         }else if (flavorType == "sorbet"){
             h2.style.fontStyle = "italic";
-        }
         }
         // STEP 10h: Append each of the above HTML elements to the ARTICLE element
         article.appendChild(h2);
