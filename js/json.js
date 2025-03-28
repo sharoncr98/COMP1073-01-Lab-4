@@ -6,7 +6,7 @@ const section = document.querySelector('section');
 async function populate(){
     // Introducing JavaScript Object Notation (JSON): https://json.org/
     // STEP 4: Store the URL of a JSON file in a variable */
-    const requestURL = 'https://raw.githubusercontent.com/shiv-coder/COMP1073W/refs/heads/main/lesson-10/lesson-10/js/i-scream.json';
+    const requestURL = 'https://raw.githubusercontent.com/sharoncr98/COMP1073-01-Lab-4/refs/heads/main/js/i-scream.json?token=GHSAT0AAAAAAC4636AXA5BWWYT5ZCJ2UHN2Z7GBXDA';
     // STEP 5: Use the new URL to create a new request object
     const request = new Request(requestURL);
     // STEP 6: Make a network request with the fetch() function, which returns a Response object
@@ -50,8 +50,11 @@ function showTopFlavors(jsonObj) {
         let image = document.createElement('img');
         let ul = document.createElement('ul');
 
+        let flavorName = topFlavors[i]["name"];
+        let calories = topFlavors[i]["calories"];
+
         // STEP 10f: Set the textContent property for each of the above elements (except the UL), based on the JSON content
-        h2.textContent = topFlavors[i]["name"];
+        h2.textContent = flavorName;
         image.setAttribute('src','https://raw.githubusercontent.com/shiv-coder/COMP1073W/main/lesson-10/lesson-10/images/' + topFlavors[i].image)
 
         // STEP 10g: Build a loop for the ingredients array in the JSON
@@ -61,6 +64,27 @@ function showTopFlavors(jsonObj) {
                 let listItem = document.createElement("li");
                 listItem.textContent = ingredients[j];
                 ul.appendChild(listItem);
+        }
+        //Depending on the type of dessert change the style of the flavor name
+        let flavorType = topFlavors[i]["type"];
+        if(flavorType == "ice cream"){
+            h2.style.fontWeight = "bold";
+            h2.style.color = "blue";
+        }else if (flavorType == "sorbet"){
+            h2.style.fontStyle = "italic";
+        }
+
+        //Add styling based on the calorie count
+        if (calories >= 400){
+            h2.style.backgroundColor = "red";
+            h2.style.textDecoration = "underline";
+        }else if (calories < 300){
+            h2.style.backgroundColor = "lightgreen";
+            let healthyText = document.createElement("span");
+            healthyText.textContent = "Healthy Pick";
+            h2.appendChild(healthyText);
+
+
         }
         // STEP 10h: Append each of the above HTML elements to the ARTICLE element
         article.appendChild(h2);
