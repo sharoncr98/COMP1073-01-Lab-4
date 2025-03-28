@@ -82,7 +82,7 @@ function showTopFlavors(jsonObj) {
             h2.style.backgroundColor = "lightgreen";
             let healthyText = document.createElement("span");
             healthyText.textContent = "Healthy Pick";
-            h2.appendChild(healthyText)
+            h2.appendChild(healthyText);
 
 
         }
